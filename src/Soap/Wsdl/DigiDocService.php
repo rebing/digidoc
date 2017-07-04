@@ -38,7 +38,7 @@ class DigiDocService extends \Bigbank\DigiDoc\Soap\ProxyAwareClient
      * @param array  $options A array of config values
      * @param string $wsdl    The wsdl file to use
      */
-    public function __construct(array $options = [], $wsdl = 'https://tsp.demo.sk.ee?wsdl')
+    public function __construct(array $options = [], $wsdl = 'https://tsp.demo.sk.ee/dds.wsdl')
     {
 
         foreach (self::$classmap as $key => $value) {

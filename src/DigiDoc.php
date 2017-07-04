@@ -18,7 +18,7 @@ class DigiDoc implements DigiDocInterface
     /**
      * @var string
      */
-    const URL_TEST = 'https://tsp.demo.sk.ee?wsdl';
+    const URL_TEST = 'https://tsp.demo.sk.ee/dds.wsdl';
 
     /**
      * @var ContainerInterface
