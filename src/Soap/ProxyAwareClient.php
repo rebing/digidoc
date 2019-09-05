@@ -30,10 +30,13 @@ class ProxyAwareClient extends \SoapClient implements SoapClientInterface
         try {
             return parent::__soapCall($function_name, $arguments, $options, $input_headers, $output_headers);
         } catch (\SoapFault $fault) {
+            $message = (isset($fault->detail) && isset($fault->detail->message))
+                ? $fault->detail->message
+                : $fault->getMessage();
+            $code = $fault->faultstring ?: $fault->getCode();
             throw new DigiDocException(
-                $fault->getMessage(),
-                $fault->getCode(),
-                $fault
+                $message,
+                $code
             );
         }
     }
